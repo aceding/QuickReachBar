@@ -1,2 +1,2 @@
 # QuickReachBar
-in activity you can call a bar to quick reach the activity you saved.
+you can call a bar to reach the activities you have saved quickly.
