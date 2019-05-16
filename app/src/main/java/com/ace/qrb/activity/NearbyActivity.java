@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.ace.qrb.R;
 
-public class NearbyActivity extends AppCompatActivity {
+public class NearbyActivity extends QuickReachActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,26 +21,19 @@ public class NearbyActivity extends AppCompatActivity {
 
     private Button mBtnSave;
 
-    private void initViews(){
+    private void initViews() {
         mBtnSave = (Button) findViewById(R.id.btn_save);
-        mBtnSave.setOnClickListener(new View.OnClickListener(){
+        mBtnSave.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                final WindowManager.LayoutParams windowLp = getWindow().getAttributes();
-                ValueAnimator animator = ValueAnimator.ofInt(100, 1);
-                animator.setDuration(5000);
-                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        int value = (int) animation.getAnimatedValue();
-                        windowLp.width = value;
-                        windowLp.height = value;
-                        getWindow().setAttributes(windowLp);
-                    }
-                });
-                animator.start();
+                onActivitySaved();
             }
         });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 }

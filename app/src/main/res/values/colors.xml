@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="trans">#00ffffff</color>
     <color name="white">#ffffff</color>
+    <color name="black_trans_50">#80000000</color>
 </resources>

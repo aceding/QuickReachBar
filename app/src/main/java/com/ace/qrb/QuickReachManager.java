@@ -6,11 +6,11 @@ import android.graphics.Bitmap;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QrbManager {
+public class QuickReachManager {
 
     public List<SavedActivityInfo> savedActivities;
 
-    public QrbManager() {
+    public QuickReachManager() {
         savedActivities = new ArrayList<>();
     }
 
@@ -29,7 +29,7 @@ public class QrbManager {
         }
     }
 
-    public void onSavedActivityRemoved(Class<? extends Activity> cls) {
+    public void onActivityRemoved(Class<? extends Activity> cls) {
         for (int i = 0, n = savedActivities.size(); i < n; i++) {
             if (savedActivities.get(i).activityCls == cls) {
                 savedActivities.remove(i);

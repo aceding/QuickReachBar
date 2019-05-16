@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.ace.qrb.R;
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingActivity extends QuickReachActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,9 @@ public class SettingActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                moveTaskToBack(true);
+                onActivitySaved();
             }
         });
     }
+
 }

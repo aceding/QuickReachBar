@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.ace.qrb.QuickReachBar;
 import com.ace.qrb.R;
 
 public class InternalActivity extends AppCompatActivity {
@@ -13,8 +14,6 @@ public class InternalActivity extends AppCompatActivity {
     private Button mBtnGotoMoreInternal;
 
     private Button mBtnShowQrb;
-
-    private Button mBtnHideQrb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class InternalActivity extends AppCompatActivity {
     private void initViews() {
         mBtnGotoMoreInternal = (Button) findViewById(R.id.btn_goto_more_internal);
         mBtnShowQrb = (Button) findViewById(R.id.btn_show_qrb);
-        mBtnHideQrb = (Button) findViewById(R.id.btn_hide_qrb);
 
         mBtnGotoMoreInternal.setOnClickListener(new View.OnClickListener() {
 
@@ -42,15 +40,8 @@ public class InternalActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-            }
-        });
-
-        mBtnHideQrb.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
+                QuickReachBar quickReachBar = QuickReachBar.createQuickReachBar(InternalActivity.this);
+                quickReachBar.show();
             }
         });
 

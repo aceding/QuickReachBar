@@ -6,12 +6,12 @@ public class ApplicationImpl extends Application {
 
     public static ApplicationImpl sInstance;
 
-    public QrbManager qrbManager;
+    public static final QuickReachManager sQrManager = new QuickReachManager();
 
     @Override
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-        qrbManager = new QrbManager();
     }
+
 }

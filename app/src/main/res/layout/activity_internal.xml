@@ -21,10 +21,4 @@
         android:layout_margin="15dp"
         android:text="show_qrb"/>
 
-    <Button
-        android:id="@+id/btn_hide_qrb"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:text="hide_qrb"/>
 </LinearLayout>

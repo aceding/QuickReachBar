@@ -15,4 +15,41 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Default" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowAnimationStyle">@style/actAnimation</item>
+    </style>
+
+    <style name="actAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+
+        <item name="android:launchTaskBehindTargetAnimation">@null</item>
+        <item name="android:launchTaskBehindSourceAnimation">@null</item>
+
+        <item name="android:activityOpenEnterAnimation">@anim/activity_new</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_back</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_finish</item>
+    </style>
+
+    <style name="MenuDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ActionSheetAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_enter</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_exit</item>
+    </style>
+
 </resources>

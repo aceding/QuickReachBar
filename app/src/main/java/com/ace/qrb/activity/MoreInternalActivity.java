@@ -11,8 +11,6 @@ public class MoreInternalActivity extends AppCompatActivity {
 
     private Button mBtnShowQrb;
 
-    private Button mBtnHideQrb;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,17 +20,8 @@ public class MoreInternalActivity extends AppCompatActivity {
 
     private void initViews() {
         mBtnShowQrb = (Button) findViewById(R.id.btn_show_qrb);
-        mBtnHideQrb = (Button) findViewById(R.id.btn_hide_qrb);
 
         mBtnShowQrb.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        mBtnHideQrb.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {

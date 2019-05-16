@@ -12,36 +12,41 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MoreInternalActivity"
-            android:label="MoreInternal">
+            android:label="MoreInternal"
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.InternalActivity"
-            android:label="Internal">
+            android:label="Internal"
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.ZoneActivity"
             android:label="Zone"
             android:launchMode="singleTask"
-            android:taskAffinity=".ZoneActivity">
+            android:taskAffinity=".ZoneActivity"
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.SettingActivity"
             android:label="Setting"
             android:launchMode="singleTask"
-            android:taskAffinity=".SettingActivity">
+            android:taskAffinity=".SettingActivity"
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.WalletActivity"
             android:label="Wallet"
             android:launchMode="singleTask"
-            android:taskAffinity=".WalletActivity">
+            android:taskAffinity=".WalletActivity"
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.NearbyActivity"
             android:label="Nearby"
             android:launchMode="singleTask"
             android:taskAffinity=".NearbyActivity"
-            android:theme="@style/Transparent">
+            android:theme="@style/Default">
         </activity>
         <activity
             android:name=".activity.MainActivity"
