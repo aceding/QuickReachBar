@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 新的从上往下 -->
+<!-- 站着别动 -->
 <set xmlns:android="http://schemas.android.com/apk/res/android"
      android:interpolator="@android:anim/accelerate_interpolator">
     <translate
         android:duration="@android:integer/config_mediumAnimTime"
-        android:fromYDelta="0%"
+        android:fromXDelta="-0%"
         android:interpolator="@anim/decelerate_cubic"
-        android:toYDelta="100%"/>
+        android:toXDelta="0%"/>
+
+    <alpha
+        android:duration="@android:integer/config_mediumAnimTime"
+        android:fromAlpha="1.0"
+        android:interpolator="@anim/decelerate_cubic"
+        android:toAlpha="1.0"/>
 </set>

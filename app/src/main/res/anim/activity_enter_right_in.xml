@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 从屏幕右边进入 -->
-<translate xmlns:android="http://schemas.android.com/apk/res/android"
-           android:interpolator="@anim/decelerate_cubic"
-           android:duration="@android:integer/config_mediumAnimTime"
-           android:fromXDelta="100%p"
-           android:startOffset="0"
-           android:toXDelta="0%p"
-/>

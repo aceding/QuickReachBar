@@ -1,9 +1,9 @@
 package com.ace.qrb;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,27 +19,27 @@ public class QuickReachBar extends Dialog {
 
     private RecyclerView mRecyclerView;
 
-    private Context mContext;
+    private Activity mActivity;
 
-    public QuickReachBar(@NonNull Context context) {
-        super(context, R.style.MenuDialogStyle);
+    public QuickReachBar(@NonNull Activity activity) {
+        super(activity, R.style.MenuDialogStyle);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             getWindow().setDimAmount(0.5f);
         }
-        mContext = context;
-        mRootView = LayoutInflater.from(context).inflate(R.layout.layout_quick_seach_bar, null);
+        mActivity = activity;
+        mRootView = LayoutInflater.from(activity).inflate(R.layout.layout_quick_seach_bar, null);
         setContentView(mRootView);
         initViews();
     }
 
     private void initViews() {
         mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.recycler_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mActivity);
         linearLayoutManager.setOrientation(OrientationHelper.HORIZONTAL);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        SavedActivitiesAdapter adapter = new SavedActivitiesAdapter(mContext,
+        SavedActivitiesAdapter adapter = new SavedActivitiesAdapter(mActivity,
                 ApplicationImpl.sQrManager.savedActivities, mItemOnClickListener);
         mRecyclerView.setAdapter(adapter);
 
@@ -57,8 +57,9 @@ public class QuickReachBar extends Dialog {
         public void onClick(View v) {
             SavedActivityInfo activityInfo = (SavedActivityInfo) v.getTag();
             dismiss();
-            Intent intent = new Intent(mContext, activityInfo.activityCls);
-            mContext.startActivity(intent);
+            Intent intent = new Intent(mActivity, activityInfo.activityCls);
+            mActivity.startActivity(intent);
+            mActivity.overridePendingTransition(R.anim.activity_enter_in, R.anim.activity_stay_origin);
         }
     };
 
@@ -67,8 +68,8 @@ public class QuickReachBar extends Dialog {
         super.show();
     }
 
-    public static QuickReachBar createQuickReachBar(Context context) {
-        final QuickReachBar dialog = new QuickReachBar(context);
+    public static QuickReachBar createQuickReachBar(Activity activity) {
+        final QuickReachBar dialog = new QuickReachBar(activity);
         if (Build.VERSION.SDK_INT != 23) {
             dialog.getWindow().setWindowAnimations(R.style.ActionSheetAnimation);
         }

@@ -1,10 +1,7 @@
 package com.ace.qrb.activity;
 
-import android.animation.ValueAnimator;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.ace.qrb.R;
@@ -36,4 +33,5 @@ public class NearbyActivity extends QuickReachActivity {
     public void finish() {
         super.finish();
     }
+
 }

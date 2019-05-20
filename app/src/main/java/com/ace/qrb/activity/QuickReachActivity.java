@@ -1,14 +1,21 @@
 package com.ace.qrb.activity;
 
 import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
 import com.ace.qrb.ApplicationImpl;
 import com.ace.qrb.QuickReachInterface;
 import com.ace.qrb.utils.BitmapUtils;
 
-public class QuickReachActivity extends AppCompatActivity implements QuickReachInterface {
+public class QuickReachActivity extends FragmentActivity implements QuickReachInterface {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public void onActivitySaved() {
