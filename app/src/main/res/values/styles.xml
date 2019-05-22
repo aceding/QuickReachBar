@@ -15,8 +15,8 @@
     <style name="actAnimation" parent="@android:style/Animation.Activity">
         <item name="android:taskToFrontEnterAnimation">@anim/activity_new</item>
         <item name="android:taskToFrontExitAnimation">@anim/activity_out</item>
-        <item name="android:taskToBackEnterAnimation">@null</item>
-        <item name="android:taskToBackExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@anim/activity_stay_origin</item>
+        <item name="android:taskToBackExitAnimation">@anim/activity_enter_out</item>
 
         <item name="android:taskOpenEnterAnimation">@anim/activity_new</item>
         <item name="android:taskOpenExitAnimation">@anim/activity_out</item>
